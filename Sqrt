@@ -1,0 +1,16 @@
+public class Main {
+	public static void main(String[] args) {
+		int n = 2;
+		
+		System.out.println(sqrt(n));
+	}
+	static int sqrt(int n){
+	    for(int i = 1; i < n; i++){
+	        if(i * i == n){
+	            return i;
+	        }
+	    }
+	    
+	    return 0;
+	}
+}

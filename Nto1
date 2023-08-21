@@ -1,0 +1,30 @@
+public class Main {
+	public static void main(String[] args) {
+		// n to 1
+		noReturn(5);
+		System.out.println();
+		noReturnReverse(5);
+//		System.out.println(withReturn(5));
+	}
+	static void noReturn(int n){   
+	 if(n == 0){
+	        return;
+	    }
+	    System.out.println(n);   
+	    noReturn(n - 1);
+	}
+	static void noReturnReverse(int n){   
+	 if(n == 0){
+	        return;
+	    }	   
+	    noReturnReverse(n - 1);
+	    System.out.println(n);   
+	}
+	static int withReturn(int n){
+	    if(n == 0){
+	        return n;
+	    }
+	    return withReturn(n-1);
+	    
+	}
+}

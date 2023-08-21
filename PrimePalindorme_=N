@@ -1,0 +1,39 @@
+public class Main {
+	public static void main(String[] args) {
+		int n = 13;
+		System.out.println(ans(n));
+	}
+	public static int ans(int n){
+	    int i = n+1;
+	    while(true){
+	             if(isPrime(i) && isPalin(i)){
+	                return i;
+	             }
+	        i++;
+	    }	    
+	} 
+	public static boolean isPalin(int n){
+	    int result = 0, temp = n, rem;
+	    while(n != 0){
+	        rem = n % 10;
+	        result = result * 10 + rem;
+	        n /= 10;
+	    }	    
+	    return temp == result; 
+	}
+	public static boolean isPrime(int n){
+	    if(n < 2){
+	        return false;
+	    }
+	    
+	    if(n == 2 || n == 3 || n == 5){
+	        return true;
+	    }
+	    
+	    if(n % 2 == 0 || n % 3 == 0 || n % 5 == 0){
+	       return false; 
+	    }
+	    
+	    return true;
+	}
+}

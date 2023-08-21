@@ -1,0 +1,31 @@
+public class Main {
+	public static void main(String[] args) {
+		int[] arr = {2, 3, 5, 9, 14, 16, 18};
+		int target = 17;
+		
+		System.out.println(floorOfNumber(arr, target));
+	}
+	public static int floorOfNumber(int[] arr, int target){
+	    int start = 0;
+	    int end = arr.length-1;
+	    int mid, result = 0;
+	   	    
+	    while(start <= end){
+	        mid = start + (end - start) / 2;
+	        if(target > arr[mid]){
+	            start = mid + 1;
+	        }else if(target < arr[mid]){
+	            end = mid - 1;
+	        }else{
+	              result = arr[mid];
+	              break;
+	        }
+	        
+	    }
+	    if(arr[end] < target){
+	        result = arr[end];
+	    }
+	    
+	    return result;
+	}
+}

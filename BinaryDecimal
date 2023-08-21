@@ -1,0 +1,21 @@
+public class Main {
+	public static void main(String[] args) {
+		int binary = 1011;
+		int decimal = 0;
+		
+		System.out.println(convert(binary, decimal, 1));
+	}
+	static int convert(int binary, int decimal, int multiply){
+	    if(binary == 0){
+	        return decimal;
+	    }
+	    
+	    int rem = binary % 10;
+	    if(rem == 1){
+	        decimal += multiply;
+	    }
+	    multiply = multiply * 2;
+	    
+	   return convert(binary / 10, decimal, multiply);
+	}
+}

@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println("Welcome to Even-Odd Number Challenge!");
+	    System.out.print("Enter any positive number: ");
+	    int positiveNum = s.nextInt();
+	    
+	    if(positiveNum % 2 == 0){
+	        System.out.println(positiveNum + " is even number.");
+	    }else{
+	        System.out.println(positiveNum + " is odd number.");
+	    }
+	   
+	    System.out.println(); 
+	    
+	    System.out.println("Welcome to Basic Arithmetic Operation Challenge!");
+	    System.out.print("Please Enter first Number: ");
+	    int num1 = s.nextInt();
+	    System.out.print("Please Enter second Number: ");
+	    int num2 = s.nextInt();
+	    
+	    int add, subtract, divide, multiply;
+	    
+	    add = num1 + num2;
+	    subtract = num1 - num2;
+	     divide = num1 / num2;
+	     multiply = num1 * num2;
+	     
+	     System.out.println(num1 + " + " + num2 + " = " + add);
+	     System.out.println(num1 + " / " + num2 + " = " + divide);
+	     System.out.println(num1 + " * " + num2 + " = " + multiply);
+	     System.out.println(num1 + " - " + num2 + " = " + subtract);
+	}
+}

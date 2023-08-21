@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		int[] nums = {3, 5, 2, 1, 4, 6, 9, 8, 7};
+		
+		System.out.println(Arrays.toString(cyclicSort(nums)));
+	}
+ static int[] cyclicSort(int[] nums){
+     int i = 0;
+     int temp;
+     while(i < nums.length){
+         int correctIndex = nums[i]-1;
+         if(i != correctIndex){
+             temp = nums[i];
+             nums[i] = nums[correctIndex];
+             nums[correctIndex] = temp;
+         }else{
+             i++;
+         }
+     }
+     
+     
+     return nums;
+  }
+}

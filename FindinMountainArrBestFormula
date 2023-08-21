@@ -1,0 +1,58 @@
+public class Main {
+	public static void main(String[] args) {
+		int[] arr = {2, 3, 4, 6, 4, 3, 1};
+		int target = 4;
+		
+		System.out.println(findMountArr(arr, target));
+	}
+	public static int findMountArr(int[] arr, int target){
+	    int peak = peakIndexOfArray(arr);
+	    
+	     if(search(arr, target, 0, peak) != -1) {
+	         return search(arr, target, 0, peak);
+	     }else{
+	          return search(arr, target, peak, arr.length-1);
+	     }
+	    
+	}
+	public static int peakIndexOfArray(int[] arr){
+	    int start = 0;
+	    int end = arr.length-1, mid;
+	    
+	    while(start < end){
+	        mid = start + (end - start) / 2;
+	        if(arr[mid] > arr[mid+1]){
+	            end = mid;
+	        }else {
+	            start = mid + 1;
+	        }
+	    }
+	    
+	   return start;
+	}
+	public static int search(int[] arr, int target, int start, int end){
+	    int mid;
+	    
+	    boolean isIncreasing = arr[start] < arr[end];
+
+	    while(start <= end){
+	        mid = start + (end - start) / 2;
+	        if(target > arr[mid]){
+	            if(isIncreasing){
+	                 start = mid +1;
+	            }else{
+	                 end = mid - 1;
+	            }
+	        }else if(target < arr[mid]){
+	            if(isIncreasing){
+	                 end = mid -1;
+	            }else{
+	                 start = mid +1;
+	            }
+	        }else{
+	           return mid;  
+	        }
+	    }
+	return -1;    
+	}
+}

@@ -1,0 +1,76 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter a number 1 to 5: ");
+		int number = s.nextInt();
+		
+		switch(number){
+		    case 1:
+		    System.out.println("Welcome to Basic For-Loop Challenge!");
+		    for(int i = 9; i >= 0; i--){
+		        System.out.print(i);
+		    }
+		    break;
+		    case 2:
+		      System.out.println("Welcome to Basic Arithmetic Operation Challenge!");
+		      System.out.print("Please Enter first number: ");
+		      int firstNum = s.nextInt();
+		      System.out.print("Please Enter second number: ");
+		      int secondNum = s.nextInt();
+		      int sum, dif, product, quotient;
+		      sum = firstNum + secondNum;
+		      dif = firstNum - secondNum;
+		      product = firstNum * secondNum;
+		      quotient = firstNum / secondNum;
+		      System.out.println(firstNum + " + " + secondNum + " = " + sum);
+		      System.out.println(firstNum + " / " + secondNum + " = " + quotient);
+		      System.out.println(firstNum + " * " + secondNum + " = " + product);
+		      System.out.println(firstNum + " - " + secondNum + " = " + dif);
+		    break;
+		    case 3: 
+		     System.out.println("Welcome to Odd-Even Challenge!");
+		     System.out.print("Enter any positive number: ");
+		     int positiveNum = s.nextInt();
+		     if(positiveNum % 2 == 0){
+		         System.out.println(positiveNum + " is even number.");
+		     }else {
+		          System.out.println(positiveNum + " is odd number.");
+		     }
+		    break;
+		    case 4:
+		      System.out.println("Welcome to Basic Comparison Challenge!");
+		    System.out.print("Enter first number: ");
+		    int nums1 = s.nextInt();
+		    System.out.print("Enter second number: ");
+		    int nums2 = s.nextInt();
+		    if(nums1 > nums2){
+		        System.out.println(nums1 + " > " + nums2);
+		    }else if(nums1 < nums2){
+		        System.out.println(nums1 + " < " + nums2);
+		    }else{
+		        System.out.println(nums1 + " = " + nums2);
+		    }
+		    break;
+		    case 5:
+		    System.out.println("Welcome to Basic Hisgest-Lowest Challenge!");
+		    System.out.print("Enter first number: ");
+		    int num1 = s.nextInt();
+		    System.out.print("Enter second number: ");
+		    int num2 = s.nextInt();
+		    
+		    if(num1 > num2){
+		        System.out.println(num1 + " is highest number");
+		    }else if(num1 < num2){
+		         System.out.println(num2 + " is highest number");
+		    }else{
+		        System.out.println(num1 + " is equal to " + num2);
+		    }    
+		    break;
+		    default:
+		    System.out.println("PAPASA kaya ako? haha");
+		}
+		
+	}
+}

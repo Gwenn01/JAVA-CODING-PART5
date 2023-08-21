@@ -1,0 +1,57 @@
+public class Main {
+	public static void main(String[] args) {
+		int[] arr = {2, 3, 4, 6, 4, 3, 1};
+		int target = 4;
+		
+		System.out.println(searchFrMountainArray(arr, target));
+	}
+	//
+	public static int searchFrMountainArray(int[] arr, int target){
+	    int start = 0, end = arr.length-1, mid;
+	    
+	    while(start < end){
+	        mid = start + (end - start) / 2;
+	        if(arr[mid] > arr[mid+1]){
+	            end = mid;
+	        }else{
+	           start = mid + 1; 
+	        }     
+	    }
+	   if(search1(arr, target, start) != -1){
+	        return search1(arr, target, start); 
+       }else{ 	        
+	        return search2(arr, target, start); 
+	    }
+	}
+	public static int search1(int[] arr, int target, int start){
+	    int s = 0, e = start, mid; 
+	    while(s <= e){
+	        mid = s + (e - s) / 2;
+	        if(target > arr[mid]){
+	            s = mid + 1;
+	        }else if(target < arr[mid]){
+	            e = mid - 1;
+	        }else{
+	            return mid;
+	        }
+	    }
+	  
+	   return -1;    
+	}
+	public static int search2(int[] arr, int target, int start){
+	    int s = start, e = arr.length-1, mid; 
+	    
+	    while(s <= e){
+	        mid = s + (e - s) / 2;
+	        if(target < arr[mid]){
+	            e = mid -1;
+	        }else if(target > arr[mid]){
+	            s = mid + 1;
+	        }else{
+	            return mid;
+	        }
+	    }
+	  
+	   return -1;    
+	}
+}

@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		String str = "baplebh";
+		String word = "aple";
+		String ans = remove(str, word);
+		System.out.println(ans);
+		
+	}
+	static String remove(String str, String word){
+	   if(str.isEmpty()){
+	       return "";
+	   }
+	   
+	   if(str.startsWith(word)){
+	       return remove(str.substring(word.length()), word);
+	   }else{
+	       return str.charAt(0) + remove(str.substring(1), word);
+	   }
+	   
+	}
+}

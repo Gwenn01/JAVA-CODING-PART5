@@ -1,0 +1,22 @@
+public class Main {
+	public static void main(String[] args) {	
+		for(int i = 1; i <= 200; i++){
+		    System.out.println(i + " " +isPrime(i));
+		}
+	}
+	static boolean isPrime(int n){
+	    if(n < 2){
+	        return false;
+	    }
+	    
+	    if(n == 2 || n == 3 || n == 5){
+	        return true;
+	    }
+	    
+	    if(n % 2 == 0 || n % 3 == 0 || n % 5 == 0){
+	       return false; 
+	    }
+	    
+	    return true;
+	}
+}

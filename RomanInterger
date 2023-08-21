@@ -1,0 +1,56 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		String s = "MCMXCIV";
+		int ans = romanInt(s);
+		System.out.println(ans);
+	}
+	public static int romanInt(String s){
+	    char[] c = s.toCharArray();
+	    char[] symbol = {'M', 'D', 'C', 'L', 'X', 'V', 'I'};
+	    int[] value = {1000, 500, 100, 50, 10, 5, 1};
+	   int i = c.length -1;
+	   int result = 0;
+	   while(i >= 0){
+	     if(i != 0){
+	       if(c[i-1] == 'I' && c[i] == 'V'){
+	           result += 4;
+	           i -= 2;
+	       }else if(c[i-1] == 'I' && c[i] == 'X'){
+	           result += 9;
+	            i -= 2;
+	       }else if(c[i-1] == 'X' && c[i] == 'L'){
+	           result += 40;
+	           i -= 2;
+	       }else if(c[i-1] == 'X' && c[i] == 'C'){
+	           result += 90;
+	           i -= 2;
+	       }else if(c[i-1] == 'C' && c[i] == 'D'){
+	           result += 400; 
+	           i -= 2;
+	       }else if(c[i-1] == 'C' && c[i] == 'M'){
+	           result += 900;
+	            i -= 2;
+	       }else{
+	           for(int j = 0; j < symbol.length; j++){
+	               if(c[i] == symbol[j]){
+	                   result += value[j];
+	               }
+	           }
+	           i--;
+	       }
+	     }else{
+	         for(int j = 0; j < symbol.length; j++){
+	               if(c[i] == symbol[j]){
+	                   result += value[j];
+	               }
+	           }
+	           i--;
+	     }
+	   }
+	   
+	 return result;   
+	}
+} 
+	}
+}

@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+			int[] arr = {3, 1, 4, 5, 2};
+	    	
+		System.out.println(Arrays.toString(cyclingSort(arr)));
+	}
+	public static int[] cyclingSort(int[] arr){
+	    int temp;
+	    int i = 1;
+	    int length;
+	    while(i < arr.length){
+	        if(arr[i-1] == i){
+	            i++;
+	        }else{
+	          length = arr[i-1];
+	          temp = arr[length-1];
+	          arr[length-1] = arr[i-1];
+	          arr[i-1] = temp;
+	        }
+	        
+	    }
+	    
+	   return arr; 
+	}
+}

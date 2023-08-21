@@ -1,0 +1,44 @@
+import java.util.*;
+public class Main {
+	static ArrayList<Integer> list = new ArrayList<>();
+	public static void main(String[] args) {
+		int arr[] = {2, 5, 12, 18, 12, 20};
+		int target = 12;
+		System.out.println(search(arr, target, 0));
+		
+		searchAll(arr, target, 0);
+		System.out.println(list);
+		
+		System.out.println(searchList(arr, target, 0, new ArrayList<Integer>()));
+		
+	}
+	static int search(int arr[], int target, int i){
+	   if(i == arr.length-1){
+	       return -1;
+	   }	   
+	   if(target == arr[i]){
+	       return i;
+	   }
+	   return search(arr, target, ++i);
+	}
+	
+	static void searchAll(int arr[], int target, int i){
+	   if(i == arr.length-1){
+	       return;
+	   }	   
+	   if(target == arr[i]){
+	       list.add(i);
+	   }
+	   searchAll(arr, target, ++i);
+	}
+	
+	static ArrayList<Integer> searchList(int arr[], int target, int index, ArrayList<Integer> List){
+	    if(index == arr.length-1){
+	        return List;
+	    }
+	    if(arr[index] == target){
+	        List.add(index);
+	    }
+	    return searchList(arr, target, ++index, List);
+	}
+}

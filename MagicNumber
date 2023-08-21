@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		int n = 3;
+		int ans = magicNumber(n);
+		System.out.println(ans);
+	}
+	public static int magicNumber(int n){
+	    
+	    int result = 0, i = 1, base = 5;
+	    while(n > 0){
+	        if((n & 1) == 1){         
+	            result += base;
+	        }
+	        base = base * 5;
+	        n = n >> 1;
+	        i++;
+	    }
+	    
+	    return result;
+	}
+}

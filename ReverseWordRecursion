@@ -1,0 +1,13 @@
+public class Main {
+	public static void main(String[] args) {
+		String word = "hello world";
+		System.out.println(reverse(word));
+	}
+	static String reverse(String word){
+	    if(word.equals("")){
+	        return "";
+	    }
+	    
+	    return reverse(word.substring(1)) + word.charAt(0);
+	}
+}

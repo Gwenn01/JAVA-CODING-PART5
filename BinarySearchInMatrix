@@ -1,0 +1,38 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		int arr[][] = {
+		    {10, 20, 30, 40},
+		    {12, 25, 35, 53},
+		    {34, 50, 60, 90},
+		    {55, 66, 78, 95}
+		};
+	   
+	   int target = 20;
+	   System.out.println(Arrays.toString(search(arr, target)));
+	}
+	//
+   public static int[] search(int[][] arr, int target){
+	    int start, end, mid;
+	    
+	    for(int row = 0; row < arr.length; row++){
+	        start = 0;
+	        end = arr[row].length-1;
+	        if(arr[row][start] <= target && arr[row][end] >= target){
+    	        while(start <= end){
+    	            mid = start + (end - start) / 2;
+    	            if(target > arr[row][mid]){
+    	                start = mid +1;
+    	            }else if(target < arr[row][mid]){
+    	                end = mid -1;
+    	            }else{
+    	                return new int[] {row, mid};
+    	            }
+    	        }
+	        }
+	        
+	    }
+	    
+	    return new int[] {-1, -1};
+   } 
+}

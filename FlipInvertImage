@@ -1,0 +1,39 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		int image[][] = {
+		                        {1, 1, 0},
+		                        {1, 0, 1},
+		                        {0, 0, 0}
+		                          };
+		 
+  	flipAndInvertImage(image);                                           		              
+	   for(int i = 0; i < image.length; i++){
+	       for(int j = 0; j < image[i].length; j++){
+	           System.out.print(image[i][j]);
+	       }
+	       System.out.println();
+	   }
+	
+	}
+	public static int[][] flipAndInvertImage(int image[][]){
+	   for(int i = 0; i < image.length; i++){
+	      int temp[] = new int[image[i].length];
+	      int k = 0;
+	      for(int j = image[i].length-1; j >= 0; j--){
+	      temp[k] = image[i][j];
+	      temp[k] = temp[k] ^ 1;
+	      k++;
+	      }
+	      image[i] = temp;
+	    }  
+	    
+	   return image;
+	}
+}][j] = image[i][j] ^ 1;
+	      }
+	    }  
+	    
+	   return image;
+	}
+}

@@ -1,0 +1,19 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+	 int n = 12345;
+	 int ans = reverse(n, 4);
+	 System.out.println(ans);
+	 System.out.println(palin(n));
+	}
+	static boolean palin(int n){
+	    return n == reverse(n, 4);
+	}
+	static int reverse(int n, int digits){
+	    if(n == 0){
+	        return n;
+	    }
+	    int rem = n % 10;
+	    return rem * (int)Math.pow(10, digits) + reverse(n/10, --digits);	    
+	}
+}

@@ -1,0 +1,17 @@
+public class Main {
+	public static void main(String[] args) {
+		String str = "baccad";
+		char rem = 'a';
+		str = remove(str, rem, "", 0);
+		System.out.println(str);
+	}
+	static String remove(String str, char rem, String result, int i){
+	    if(i == str.length()){
+	        return result;
+	    }
+	    if(str.charAt(i) != rem){
+	        result += str.charAt(i);
+	    }
+	    return remove(str, rem, result, ++i);
+	}
+}

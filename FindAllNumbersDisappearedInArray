@@ -1,0 +1,54 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		//int[] nums = {4, 3, 2, 7, 8, 2, 3, 1, 10};
+		int[] nums = {4, 3, 2, 7, 7, 2, 3, 1};
+		System.out.println(find(nums));
+	}
+	public static List<Integer> find(int[] nums){ 
+	ArrayList<Integer> list = new ArrayList<Integer>();  
+	   int temp;
+	   int count = 0;
+	   for(int i = 0; i < nums.length; i++){
+	       for(int j = i+1; j < nums.length; j++){
+	           if(nums[i] > nums[j]){
+	               temp = nums[i];
+	               nums[i] = nums[j];
+	               nums[j] = temp;
+	           }
+	           if(nums[i] == nums[j]){
+	               nums[j] = 0;
+	               count++;
+	           }
+	       }
+	   }
+	  int index = 1;
+	  boolean found = false;
+	  for(int i = 0; i < nums.length; i++){
+	    if(nums[i] > index){
+	        list.add(index);
+	        if(i == 0){
+	            i = 0;
+	        }else{
+	            i--;
+	        }
+	        found = true;
+	    }
+	    if(nums[i] != 0){
+	        index++;
+	    }
+	  }
+	
+	  if(found){
+	      return list;
+	  }else{
+	      for(int i = 1; i <= count; i++){
+	          list.add((nums.length+i) - count);
+	      }
+	      
+	    return list;
+	  }
+	      
+	   
+	}
+}

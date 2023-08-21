@@ -1,0 +1,11 @@
+public class Main {
+	public static void main(String[] args) {
+		System.out.println(gcf(4, 8));
+	}
+	static int gcf(int a, int b){
+	    if(a == 0){
+	        return b;
+	    }
+	    return gcf(b%a, a);
+	}
+}

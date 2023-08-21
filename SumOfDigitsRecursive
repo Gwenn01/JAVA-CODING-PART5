@@ -1,0 +1,13 @@
+public class Main {
+	public static void main(String[] args) {
+		int n = 12345;
+		System.out.println(sumOfDigits(n));
+	}
+	static int sumOfDigits(int n){
+	    if(n == 0){
+	       return n;  
+	    }
+	    
+	    return n % 10 + sumOfDigits(n / 10);
+	}
+}

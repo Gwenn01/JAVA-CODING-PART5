@@ -1,0 +1,19 @@
+public class Main {
+	public static void main(String[] args) {
+		int[] arr = {1, 5, 10, 15, 20};
+		int target = 15;
+		
+		System.out.println(search(arr, target, 0));
+	}
+	static int search(int[] arr, int target, int i){
+	    if(target == arr[i]){
+	        return i;
+	    }
+	    
+	     if(i >= arr.length-1) {
+	         return -1;
+	     }
+	    
+	    return search(arr, target, i + 1);
+	}
+}

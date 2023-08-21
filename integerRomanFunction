@@ -1,0 +1,34 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter Number: ");
+		int nums = s.nextInt();
+			
+		System.out.println(romanInteger(nums));	
+			
+	}
+	public static String romanInteger(int nums){
+	    String symbol = "IVXLCDM";
+		int[] integer = {1, 5, 10, 50, 100, 500, 1000};
+	    char[] c = symbol.toCharArray();
+	    String result = "";
+	    
+	    while(nums != 0){
+	        for(int i = c.length-1; i >= 0 ;i--){
+	            if(nums >= integer[i]){
+	                nums -= integer[i];
+	                result += c[i];
+	                break;
+	            }
+	        }
+	    }
+	   
+	  return result;	    
+	}
+}   }
+	    }
+	   
+	  return result;	    
+	}
+}

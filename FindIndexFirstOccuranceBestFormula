@@ -1,0 +1,21 @@
+public class Main {
+	public static void main(String[] args) {
+	  String haystack = "sadbutsad";
+	  String needle = "sad";
+	  System.out.println(findIndex(haystack, needle));
+	  
+	}
+	static int findIndex(String haystack, String needle){
+	    return find(haystack, needle, 0);
+	}
+	static int find(String haystack, String needle, int index){
+	    if(haystack.isEmpty()){
+	        return -1;
+	    }
+	    if(haystack.startsWith(needle)){
+	        return index;
+	    }
+	    
+	    return find(haystack.substring(1), needle, ++index);
+	}
+}

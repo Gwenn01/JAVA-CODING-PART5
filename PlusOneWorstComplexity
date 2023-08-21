@@ -1,0 +1,60 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+	//	int digits[] = {5,6,2,0,0,4,6,2,4,9};
+	//	int digits[] = {1, 2, 3, 4};
+	       int digits[] = {4,2,9,9};
+		System.out.println(Arrays.toString(plusOne(digits)));
+		
+	}
+	static int[] plusOne(int digits[]){
+	    if(onlyNine(digits)){
+	      int temp[] = new int[digits.length+1];
+	      temp[0] = 1;
+	      return temp;
+	    }else if(onlyExcept(digits)){
+	       int index = index(digits);
+	       int temp[] = new int[digits.length];
+	       for(int i = 0; i <= index; i++){
+	           temp[i] = digits[i];
+	       }
+	      temp[index]++;      
+	      return temp;
+    	}else{
+	        if(digits[digits.length-1] < 9){
+	            digits[digits.length-1]++;
+	            return digits;
+	        }else{
+	            digits[digits.length-1] = 0;
+	            digits[digits.length-2]++;
+	            return digits;
+	        }
+	    }
+	}
+	static boolean onlyNine(int digits[]){
+	    for(int i = 0; i < digits.length; i++){
+	        if(digits[i] != 9){
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+	static boolean onlyExcept(int digits[]){
+	    int count = 0;
+	    for(int i = 0; i < digits.length; i++){
+	        if(digits[i] != 9){
+	            count++;
+	        }
+	    }
+	  
+	    return count < 2;
+	}
+	static int index(int digits[]){
+	     for(int i = 0; i < digits.length; i++){
+	        if(digits[i] != 9){
+	            return i;
+	        }
+	    }
+	    return 0;
+	}
+}
